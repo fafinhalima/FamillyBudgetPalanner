@@ -20,7 +20,7 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class UsuarioManagedBean {
 
-       private Usuario usuario = new Usuario();
+       private  Usuario usuario = new Usuario();
     private List<Usuario> listaUsusarios;
 
     public List<Usuario> getListaUsusarios() {
@@ -28,33 +28,33 @@ public class UsuarioManagedBean {
         return listaUsusarios;
     }
     
-    public Usuario getLivro() {
+    public Usuario getUsuario() {
         return usuario;
     }
     
-    public void setLivro(Usuario usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
     
-   public void prepararAlterarLivro(Usuario usuario){
+   public void prepararAlterarUsuario(Usuario usuario){
         this.usuario = usuario;
     }
    
-   public void prepararExcluirLivro(Usuario usuario){
+   public void prepararExcluirUsuario(Usuario usuario){
         this.usuario = usuario;
     }
     
-    public void excluirLivro(){
+    public void excluirUsuario(){
         UsuarioDAO.delete(usuario);
         this.usuario = new Usuario();
     }
     
-    public void adicionarLivro(){
+    public void adicionarUsuario(){
        UsuarioDAO.create(usuario);
        this.usuario = new Usuario();
     }
     
-    public void alterarLivro(){
+    public void alterarUsuario(){
        UsuarioDAO.update(usuario);
        this.usuario = new Usuario();
     }

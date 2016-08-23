@@ -9,6 +9,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import beans.Usuario;
+import beans.UsuarioPK;
+import javax.persistence.Query;
 /**
  *
  * @author Rafael
@@ -33,7 +35,37 @@ private static EntityManagerFactory emf = Persistence.createEntityManagerFactory
         }
         return false;
     }
-
+/**
+    * Este método faz a busca de um usuário no sistema
+    * @param usuario O JavaBean contendo os dados de busca (login) do usuário
+    * @return Um JavaBean UsuarioBean contendo os dados do usuário buscado
+    */
+    public Usuario buscarUsuario(Usuario usuario) throws Exception
+    {
+       EntityManager em = null;
+      if(usuario == null)
+        throw new Exception("O parâmetro é nulo");
+      
+      try {
+       em = emf.createEntityManager();
+      Query q = em.createQuery("select u from UsuarioBean u where u.login = ? and u.senha = ?");
+      q.setParameter(0, usuario.getUsuarioPK().getLogin());
+      q.setParameter(1, usuario.getSenha());
+      List l = q.getResultList();
+      if (!l.isEmpty())
+      {
+        usuario = (Usuario)q.getResultList().get(0);
+        return usuario;
+      }
+      }
+       catch (Exception ex) {
+            System.err.println("Erro: " + ex.getMessage());
+            ex.printStackTrace();
+        } finally {
+            em.close();
+        }
+      return null;
+    }
     public static Usuario retrieve(Object id) {
         EntityManager em = null;
         try {

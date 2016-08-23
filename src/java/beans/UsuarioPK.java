@@ -5,6 +5,7 @@
  */
 package beans;
 
+import dao.UsuarioDAO;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -32,6 +33,8 @@ public class UsuarioPK implements Serializable {
 
     public UsuarioPK() {
     }
+    
+   
 
     public UsuarioPK(String login, String email) {
         this.login = login;

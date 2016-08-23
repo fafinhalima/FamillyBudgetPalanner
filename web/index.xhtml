@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
     <h:head>
         <title>Login</title>
     </h:head>
@@ -9,10 +10,10 @@
        <h:form>
                 <h:outputLabel value="Acesso"/> <br /><br />
                 <h:outputLabel value="Login: "/>
-                <h:inputText value="#{usuario.login}"/><br />
+                <h:inputText value="#{usuarioManagedBean.usuario.login}"/><br />
                 <h:outputLabel value="Senha: "/>
-                <h:inputSecret value="#{usuario.senha}"/> <br /> <br />
-                <h:commandButton value="Fazer Login" action="#{usuario.onLogin}"/>
+                <h:inputSecret value="#{usuarioManagedBean.usuario.senha}"/> <br /> <br />
+                <h:commandButton value="Fazer Login" action="#{usuarioManagedBean.usuario.onLogin()}"/>
        </h:form>
     </h:body>
 </html>

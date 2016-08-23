@@ -5,6 +5,7 @@
  */
 package beans;
 
+import dao.UsuarioDAO;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -47,10 +48,29 @@ public class Usuario implements Serializable {
     private Collection<Pessoa> pessoaCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "loginUsuario")
     private Collection<Categoria> categoriaCollection;
-
+    private Object usuarioManagedBean;
+    private String login;
+    
     public Usuario() {
     }
 
+      public String onLogin()
+    {
+       UsuarioDAO usuario = new UsuarioDAO();
+       try
+       {
+        
+         Usuario u;
+           u = usuario.buscarUsuario(this);
+         if(u != null)
+           return "sucesso";
+       } 
+       catch (Exception ex)
+       {
+         System.err.println("Erro: " + ex.getMessage());
+       }
+       return "falha";
+    }
     public Usuario(UsuarioPK usuarioPK) {
         this.usuarioPK = usuarioPK;
     }
@@ -75,7 +95,16 @@ public class Usuario implements Serializable {
     public String getSenha() {
         return senha;
     }
-
+    
+    public String getLogin() {
+        return login;
+    }
+    
+     public void setLogin(String login) {
+       this.usuarioPK.setLogin(login);
+       this.login = this.usuarioPK.getLogin();
+    }
+    
     public void setSenha(String senha) {
         this.senha = senha;
     }
