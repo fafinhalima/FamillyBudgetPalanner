@@ -50,7 +50,9 @@
                                     <hr>
                                     <h4>Cadastre-se</h4>
                                     <p>
-                                        <a href="cadastraUsuario.jsp">Clique Aqui</a> para se cadastrar.</p>
+                                        <a href="cadastraUsuario.jsp">Clique Aqui</a> e cadastre-se agora |
+                                        <a href="cadastraUsuario.jsp">Clique Aqui</a> e recuper sua senha
+                                    </p>
                                 </form>
                             </div>
                             <!-- FIM Login Box -->

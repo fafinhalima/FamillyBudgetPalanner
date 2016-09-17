@@ -7,7 +7,7 @@
     <from-view-id>/index.jsp</from-view-id>
     <navigation-case>
         <from-outcome>sucesso</from-outcome>
-        <to-view-id>/orcamento.jsp</to-view-id>
+        <to-view-id>/categoria.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>falha</from-outcome>

@@ -12,7 +12,36 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <br />
-        <font face="Verdana" style="font-size:18px;font-weight:bold">Testes</font>
+        <div id="body-bg">
+            <div id="footer" class="background-grey">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Footer Menu -->
+                            <div id="footermenu" class="col-md-8">
+                                <ul class="list-unstyled list-inline">
+                                    <li>
+                                        <a href="#" target="_blank">Sample Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">Sample Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">Sample Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" target="_blank">Sample Link</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- End Footer Menu -->
+                            <!-- Copyright -->
+                            <div id="copyright" class="col-md-4">
+                                <p class="pull-right">(c)FamillyBudgetPlanner</p>
+                            </div>
+                            <!-- End Copyright -->
+                        </div>
+                </div>
+            </div>
+        </div>  
     </body>
 </html>

@@ -51,8 +51,8 @@
                     <div class="row">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html" title="">
-                                <img src="imagens/logo.png" alt="Logo" />
+                            <a href="index.jsp" title="">
+                                <img src="assets/img/logo.png" alt="Logo" />
                             </a>
                         </div>
                         <!-- End Logo -->
