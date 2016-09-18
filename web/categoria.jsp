@@ -42,7 +42,7 @@
                                     </h:commandLink>
                                 </h:column>
                             </h:dataTable> <br /> <br/>
-                            <h:commandLink action="#{categoria.onGernciaCategora()}" styleClass="btn btn-primary"  >
+                            <h:commandLink action="#{categoria.onGerenciaCategoria()}" styleClass="btn btn-primary"  >
                                  Nova categoria
                             </h:commandLink><br/><br/>
                             <h:commandLink  action="#{usuario.onLogoff}" value = "Fazer logoff" />

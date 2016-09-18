@@ -35,10 +35,7 @@
                                 <label>Descrição</label>
                                 <h:inputText title="categoria" styleClass="form-control margin-bottom-20" value="#{categoria.descricao}" required="true" requiredMessage="Digite a descrição"/>
                                 <div class="row">
-                                    <div class="col-lg-4 text-right">
-                                        <h:commandButton styleClass="btn btn-primary" action="#{categoria.onInsert()}" rendered="#{categoria.codigo == null}" value="Inserir Nova Categoria"></h:commandButton>
-                                        <h:commandButton styleClass="btn btn-primary" action="#{categoria.onInsert()}" rendered="#{categoria.codigo != null}" value="Alterar Categoria"></h:commandButton>
-                                    </div>
+                                    
                                 </div>
                             </form>
                         </div>

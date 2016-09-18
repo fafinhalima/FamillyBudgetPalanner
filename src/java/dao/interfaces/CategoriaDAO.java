@@ -9,10 +9,11 @@ import beans.CategoriaBean;
 public interface CategoriaDAO
 {
    /**
-    * Este método faz a remoção de uma Cateoforia
-    * @param categoria O JavaBean contendo os dados do contato a ser removido
+    * Este método faz a remoção de uma Cateogoria
+    * @param categoria O JavaBean contendo os dados da categoria a ser removida
     * @return true se a remoção ocorrer com sucesso e false caso contrário
     */
     public boolean delete(CategoriaBean contato) throws Exception;
+    
 }
 

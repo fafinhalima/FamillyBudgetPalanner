@@ -35,10 +35,7 @@
     <managed-bean-scope>session</managed-bean-scope>
 </managed-bean>
 <managed-bean>
-    <managed-bean-name>contato</managed-bean-name>
+    <managed-bean-name>categoria</managed-bean-name>
     <managed-bean-class>beans.CategoriaBean</managed-bean-class>
-
     <managed-bean-scope>session</managed-bean-scope></managed-bean>
-
-
 </faces-config>

@@ -45,7 +45,14 @@ public class CategoriaBean implements Serializable
       }
       return "falha";
     }
-
+    /**
+     * Usado para tratar a atualização da Categoria
+     * @return sucesso Indica que a tela gerencia foi solicitada
+     */
+    public String onGerenciaCategoria()
+    {
+      return "gerencia";
+    }
     /**
      * @return the codigo
      */
