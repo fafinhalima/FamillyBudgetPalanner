@@ -31,11 +31,6 @@ import javax.xml.bind.annotation.XmlTransient;
  */
 @Entity
 @Table(name = "tipo_entrada_saida")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "TipoEntradaSaida.findAll", query = "SELECT t FROM TipoEntradaSaida t"),
-    @NamedQuery(name = "TipoEntradaSaida.findByCodTipoSaida", query = "SELECT t FROM TipoEntradaSaida t WHERE t.codTipoSaida = :codTipoSaida"),
-    @NamedQuery(name = "TipoEntradaSaida.findByPorcentagemPeso", query = "SELECT t FROM TipoEntradaSaida t WHERE t.porcentagemPeso = :porcentagemPeso")})
 public class TipoEntradaSaida implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoEntradaSaida")

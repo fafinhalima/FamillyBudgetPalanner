@@ -19,6 +19,9 @@ import javax.persistence.TemporalType;
 @Table(name = "categoria")
 public class CategoriaBean implements Serializable
 {
+    @JoinColumn(name = "tipo_entrada_saida", referencedColumnName = "codTipoSaida")
+    @ManyToOne(optional = false)
+    private TipoEntradaSaida tipoEntradaSaida;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "codigo")
@@ -115,6 +118,20 @@ public class CategoriaBean implements Serializable
      */
     public void setLoginUsuario(UsuarioBean loginUsuario) {
         this.loginUsuario = loginUsuario;
+    }
+    
+    /**
+     * @return o tipoEntradaSaida
+     */
+    public TipoEntradaSaida getTipoEntradaSaida() {
+        return tipoEntradaSaida;
+    }
+
+    /**
+     * @param tipoEntradaSaida  ajusta o tipo de entrada e saida
+     */
+    public void setTipoEntradaSaida(TipoEntradaSaida tipoEntradaSaida) {
+        this.tipoEntradaSaida = tipoEntradaSaida;
     }
 }
 
