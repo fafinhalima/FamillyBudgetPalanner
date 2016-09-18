@@ -15,10 +15,10 @@
     </navigation-case>
 </navigation-rule>
 <navigation-rule>
-    <from-view-id>/orcamento.jsp</from-view-id>
+    <from-view-id>/categoria.jsp</from-view-id>
     <navigation-case>
-        <from-outcome>sucesso</from-outcome>
-        <to-view-id>/orcamento.jsp</to-view-id>
+        <from-outcome>gerencia</from-outcome>
+        <to-view-id>/gerenciaCategoria.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>falha</from-outcome>

@@ -41,7 +41,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label class="checkbox">
-                                                <input type="checkbox">Stay signed in</label>
+                                                <input type="checkbox">Fique Logado</label>
                                         </div>
                                         <div class="col-md-6">
                                                 <h:commandButton styleClass="btn btn-primary pull-right" value="Fazer Login" action="#{usuario.onLogin}"/>
