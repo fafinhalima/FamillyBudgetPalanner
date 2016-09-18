@@ -12,8 +12,8 @@
             <title>Falha!</title>
         </head>
         <body>
-            <h:outputLabel>Falha ao excluir o contato!</h:outputLabel><br /><br />
-            <h:outputLink value="agenda.jsp">Voltar</h:outputLink>
+            <h:outputLabel>Falha na ação da página!</h:outputLabel><br /><br />
+            <h:outputLink value="index.jsp">Voltar</h:outputLink>
         </body>
     </html>
 </f:view>

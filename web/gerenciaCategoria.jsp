@@ -35,7 +35,11 @@
                                 <label>Descrição</label>
                                 <h:inputText title="categoria" styleClass="form-control margin-bottom-20" value="#{categoria.descricao}" required="true" requiredMessage="Digite a descrição"/>
                                 <div class="row">
+                                    <div class="col-lg-4 text-right">
+                                        <h:commandLink action="#{categoria.onInsert()}" styleClass="btn btn-primary" value="Nova Categoria" rendered="#{categoria.codigo == null}"  >
                                     
+                                        </h:commandLink>
+                                    </div>
                                 </div>
                             </form>
                         </div>

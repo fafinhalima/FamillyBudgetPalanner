@@ -12,8 +12,16 @@ public interface CategoriaDAO
     * Este método faz a remoção de uma Cateogoria
     * @param categoria O JavaBean contendo os dados da categoria a ser removida
     * @return true se a remoção ocorrer com sucesso e false caso contrário
+     * @throws java.lang.Exception
     */
-    public boolean delete(CategoriaBean contato) throws Exception;
+    public boolean delete(CategoriaBean categoria) throws Exception;
+    /**
+    * Este método faz a remoção de uma Cateogoria
+    * @param categoria O JavaBean contendo os dados da categoria a ser inserida
+    * @return true se inserir ocorrer com sucesso e false caso contrário
+     * @throws java.lang.Exception
+    */
+    public boolean insert(CategoriaBean categoria) throws Exception;
     
 }
 

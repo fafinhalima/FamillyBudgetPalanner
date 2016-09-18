@@ -46,6 +46,27 @@ public class CategoriaBean implements Serializable
       return "falha";
     }
     /**
+    * Este método faz a remoção de uma Cateogoria
+    * @param categoria O JavaBean contendo os dados da categoria a ser inserida
+    * @return true se inserir ocorrer com sucesso e false caso contrário
+     * @throws java.lang.Exception
+    */
+    public String onInsert()
+    {
+      CategoriaDAO categoria;
+      try
+      {
+        categoria = MySQLOrcamentoDAOFactory.getCategoriaDAO();
+        if(categoria.insert(this))
+          return "sucesso";
+      }
+      catch (Exception ex)
+      {
+        System.err.println("Erro: " + ex.getMessage());
+      }
+      return "falha";
+    }
+    /**
      * Usado para tratar a atualização da Categoria
      * @return sucesso Indica que a tela gerencia foi solicitada
      */
