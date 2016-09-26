@@ -50,7 +50,7 @@
                                     <hr>
                                     <h4>Cadastre-se</h4>
                                     <p>
-                                        <a href="cadastraUsuario.jsp">Clique Aqui</a> e cadastre-se agora |
+                                        <h:commandLink  action="#{usuario.onCadasrtro()}" value = "Clique Aqui e cadastre-se agora" /> |
                                         <a href="cadastraUsuario.jsp">Clique Aqui</a> e recuper sua senha
                                     </p>
                                 </form>

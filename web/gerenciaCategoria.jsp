@@ -1,6 +1,6 @@
 <%-- 
     Document   : gerenciaCategoria
-    Created on : 17/09/2016, 20:30:09
+    
     Author     : Rafael
 --%>
 
@@ -16,10 +16,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <h:form>
+        
             <jsp:include page="cabecalho_n_menu.jsp" />
              <!-- === INCIA CONTEUDO === -->
-             
+           
             <div id="content">
                 <div class="container background-white">
                     <div class="container">
@@ -27,21 +27,30 @@
                            
                             <!-- Categoria Box -->
                         <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
-                            <form class="signup-page">
+                            <h:form styleClass="signup-page">
                                 <div class="signup-header">
                                     <h2>Cadastre uma nova categoria</h2>
                                     <p><a href="lacamento.jsp">Click aqui</a> para lançamento de entrada.</p>
                                 </div>
+                                <label>Usuario</label>
+                                <h:inputText title="usuario"  styleClass="form-control margin-bottom-20" label="#{usuario.login}" value="#{usuario.login}" required="true" requiredMessage="Digite a descrição"/>
                                 <label>Descrição</label>
-                                <h:inputText title="categoria" styleClass="form-control margin-bottom-20" value="#{categoria.descricao}" required="true" requiredMessage="Digite a descrição"/>
+                                <h:inputText title="categoria"  styleClass="form-control margin-bottom-20" value="#{categoria.descricao}" required="true" requiredMessage="Digite a descrição"/>
+                                <label>Tipo de entrada e saida</label>
                                 <div class="row">
                                     <div class="col-lg-4 text-right">
-                                        <h:commandLink action="#{categoria.onInsert()}" styleClass="btn btn-primary" value="Nova Categoria" rendered="#{categoria.codigo == null}"  >
-                                    
-                                        </h:commandLink>
+                                        <h:selectOneMenu id="selectCar" value="#{categoria.tipoEntradaSaida}" >  
+                                            <f:selectItems value="#{categoria.buscaTipoEntradaSaida()}"/>
+
+                                        </h:selectOneMenu>
                                     </div>
                                 </div>
-                            </form>
+                                <div class="row">
+                                    <div class="col-lg-4 text-right">
+                                        <h:commandButton styleClass="btn btn-primary pull-right"  action="#{categoria.onInsert(usuario)}" value="Nova Categoria"  />                                      
+                                    </div>
+                                </div>
+                            </h:form>
                         </div>
                         <!-- Fim Categoria Box -->
                         </div>
@@ -52,7 +61,6 @@
            
           <jsp:include page="rodape.jsp" />
           
-         </h:form>
     </body>
 </html>
 </f:view>

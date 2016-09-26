@@ -23,6 +23,8 @@ public class UsuarioBean implements Serializable
     private String login;
     @Column(name = "senha")
     private String senha;
+    @Column(name = "email")
+    private String email;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "loginUsuario")
     private Collection<CategoriaBean> categoriaCollection;
 
@@ -46,6 +48,27 @@ public class UsuarioBean implements Serializable
        }
        return "falha";
     }
+    
+    /**
+     * Usado para tratar o login do usuário
+     * @return sucesso se o login for bem sucedido e falha caso contrário
+     */
+    public String onInsert()
+    {
+       UsuarioDAO usuario;
+       try
+       {
+         usuario = MySQLOrcamentoDAOFactory.getUsuarioDAO();
+        
+         if(usuario.insere(this))
+           return "sucesso";
+       } 
+       catch (Exception ex)
+       {
+         System.err.println("Erro: " + ex.getMessage());
+       }
+       return "falha";
+    }
 
     /**
      * Usado para tratar o logoff do usuário
@@ -55,7 +78,14 @@ public class UsuarioBean implements Serializable
     {
       return "logoff";
     }
-
+    /**
+     * Usado para tratar o cadastro do usuário
+     * @return sucesso Indica que o cadastro foi realizado com sucesso
+     */
+    public String onCadasrtro()
+    {
+      return "cadastro";
+    }
     /**
      * Esta função retorna um DataModel contendo a lista de categorias do usuário
      * @return model A lista de categorias do usuário
@@ -106,6 +136,21 @@ public class UsuarioBean implements Serializable
      */
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    
+    
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     /**

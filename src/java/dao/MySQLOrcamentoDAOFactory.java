@@ -4,8 +4,9 @@ import dao.interfaces.UsuarioDAO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
+
 import dao.interfaces.CategoriaDAO;
-import dao.interfaces.CategoriaDAO;
+import dao.interfaces.TipoDAO;
 
 /**
  * Esta classe gerencia conexões com o banco de dados da agenda
@@ -58,5 +59,15 @@ public class MySQLOrcamentoDAOFactory
     public static CategoriaDAO getCategoriaDAO() throws Exception
     {
        return new MySQLCategoriaDAO();
+    }
+    /**
+     * Esta função retorna uma instância de um objeto da classe
+     * MySQLCategoriaDAO, que implementa a interface CategoriaDAO.
+     * @return um objeto da classe MySQLCategoriaDAO, que implementa a interface CategoriaDAO.
+     * @throws java.lang.Exception
+     */
+    public static TipoDAO getTipoDAO() throws Exception
+    {
+       return new MySQLTipoDAO();
     }
 }

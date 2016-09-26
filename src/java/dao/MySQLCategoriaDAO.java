@@ -53,10 +53,10 @@ public class MySQLCategoriaDAO implements CategoriaDAO
      * @throws java.lang.Exception
     */
  
-    public boolean insert(CategoriaBean categoria) throws Exception
+   @Override
+    public boolean insere(CategoriaBean categoria) throws Exception
     {
-      if(categoria == null)
-        throw new Exception("O parâmetro é nulo");
+     
 
       session = MySQLOrcamentoDAOFactory.getInstance();
       Transaction tx = null;
@@ -69,8 +69,8 @@ public class MySQLCategoriaDAO implements CategoriaDAO
       }
       catch(HibernateException ex)
       {
-        ex.printStackTrace();
-        tx.rollback(); //Desfaz a operação de remoção
+            System.err.println("Erro: " + ex.getMessage());
+
       }
       finally
       {

@@ -2,8 +2,11 @@ package beans;
 
 import dao.MySQLOrcamentoDAOFactory;
 import dao.interfaces.CategoriaDAO;
+import dao.interfaces.TipoDAO;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import javax.faces.model.SelectItem;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -50,18 +53,23 @@ public class CategoriaBean implements Serializable
     }
     /**
     * Este método faz a remoção de uma Cateogoria
-    * @param categoria O JavaBean contendo os dados da categoria a ser inserida
+     * @param usuario
     * @return true se inserir ocorrer com sucesso e false caso contrário
-     * @throws java.lang.Exception
     */
-    public String onInsert()
+    public String onInsert(UsuarioBean usuario)
     {
       CategoriaDAO categoria;
       try
       {
+          if(usuario== null)
+              return "falha";
+              
+        this.setLoginUsuario(usuario);
+          
         categoria = MySQLOrcamentoDAOFactory.getCategoriaDAO();
-        if(categoria.insert(this))
+        if(categoria.insere(this)){
           return "sucesso";
+        }
       }
       catch (Exception ex)
       {
@@ -132,6 +140,32 @@ public class CategoriaBean implements Serializable
      */
     public void setTipoEntradaSaida(TipoEntradaSaida tipoEntradaSaida) {
         this.tipoEntradaSaida = tipoEntradaSaida;
+    }
+    
+    public ArrayList<SelectItem> buscaTipoEntradaSaida()
+    {
+        TipoDAO tipo = null;
+              
+       try
+       {
+         tipo =  MySQLOrcamentoDAOFactory.getTipoDAO();
+         ArrayList u = new ArrayList();
+         u.add(new SelectItem(null,"Selecione um Tipo"));
+         for(TipoEntradaSaida item: tipo.buscaTipo())
+         {
+            u.add(new SelectItem(item.getCodTipoSaida(),item.getDescricaoTipoSaida()));
+         }
+         if(u.size()>1)
+         {
+         
+           return u;
+         }
+       }
+       catch(Exception ex)
+       {
+         System.err.println("Erro: " + ex.getMessage());
+       }
+       return null;  
     }
 }
 

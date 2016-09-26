@@ -21,7 +21,7 @@ public interface CategoriaDAO
     * @return true se inserir ocorrer com sucesso e false caso contrário
      * @throws java.lang.Exception
     */
-    public boolean insert(CategoriaBean categoria) throws Exception;
+    public boolean insere(CategoriaBean categoria) throws Exception;
     
 }
 

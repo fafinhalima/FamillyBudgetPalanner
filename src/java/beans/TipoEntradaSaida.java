@@ -5,9 +5,15 @@
  */
 package beans;
 
+import java.util.*;
+import dao.interfaces.TipoDAO;
+import dao.MySQLOrcamentoDAOFactory;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collection;
+import static java.util.Collections.list;
+import javax.faces.model.DataModel;
+import javax.faces.model.SelectItem;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -123,6 +129,32 @@ public class TipoEntradaSaida implements Serializable {
 
     public void setCategoriaBeanCollection(Collection<CategoriaBean> categoriaBeanCollection) {
         this.categoriaBeanCollection = categoriaBeanCollection;
+    }
+    
+    public ArrayList<SelectItem> busca()
+    {
+        TipoDAO tipo = null;
+              
+       try
+       {
+         tipo =  MySQLOrcamentoDAOFactory.getTipoDAO();
+         ArrayList u = new ArrayList();
+         u.add(new SelectItem(null,"Selecione um Tipo"));
+         for(TipoEntradaSaida item: tipo.buscaTipo())
+         {
+            u.add(new SelectItem(item.getCodTipoSaida(),item.getDescricaoTipoSaida()));
+         }
+         if(u.size()>1)
+         {
+         
+           return u;
+         }
+       }
+       catch(Exception ex)
+       {
+         System.err.println("Erro: " + ex.getMessage());
+       }
+       return null;  
     }
     
 }
