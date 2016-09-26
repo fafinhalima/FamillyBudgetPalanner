@@ -39,15 +39,16 @@
                                 <label>Tipo de entrada e saida</label>
                                 <div class="row">
                                     <div class="col-lg-4 text-right">
-                                        <h:selectOneMenu id="selectCar" value="#{categoria.tipoEntradaSaida}" >  
+                                        <h:selectOneMenu id="selectCar" value="#{tipo.codTipoSaida}" >  
                                             <f:selectItems value="#{categoria.buscaTipoEntradaSaida()}"/>
 
                                         </h:selectOneMenu>
                                     </div>
                                 </div>
+                                <br/>
                                 <div class="row">
                                     <div class="col-lg-4 text-right">
-                                        <h:commandButton styleClass="btn btn-primary pull-right"  action="#{categoria.onInsert(usuario)}" value="Nova Categoria"  />                                      
+                                        <h:commandButton styleClass="btn btn-primary pull-right"  action="#{categoria.onInsert(usuario,tipo)}" value="Nova Categoria"  />                                      
                                     </div>
                                 </div>
                             </h:form>

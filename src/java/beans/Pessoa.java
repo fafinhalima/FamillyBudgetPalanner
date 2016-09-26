@@ -5,6 +5,8 @@
  */
 package beans;
 
+import dao.MySQLOrcamentoDAOFactory;
+import dao.interfaces.PessoaDAO;
 import java.io.Serializable;
 import java.util.Collection;
 import javax.persistence.Basic;
@@ -201,7 +203,28 @@ public class Pessoa implements Serializable {
     public void setLacamentoEntradaCollection(Collection<LacamentoEntrada> lacamentoEntradaCollection) {
         this.lacamentoEntradaCollection = lacamentoEntradaCollection;
     }
-
+    
+    public String onInsert(UsuarioBean usuario)
+    {
+        
+        PessoaDAO pessoa;
+        
+       try
+       {
+           if (usuario == null)
+               return "falha";
+           this.setLoginUsuario(usuario);
+         pessoa = MySQLOrcamentoDAOFactory.getPessoaDAO();
+        
+         if(pessoa.insere(this))
+           return "sucesso";
+       } 
+       catch (Exception ex)
+       {
+         System.err.println("Erro: " + ex.getMessage());
+       }
+       return "falha";
+    }
 
     
 }

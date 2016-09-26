@@ -19,6 +19,21 @@
     </navigation-case>
 </navigation-rule>
 <navigation-rule>
+    <from-view-id>/cadastraPessoa.jsp</from-view-id>
+    <navigation-case>
+        <from-outcome>sucesso</from-outcome>
+        <to-view-id>/categoria.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>falha</from-outcome>
+        <to-view-id>/falhaLogin.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>cadastro</from-outcome>
+        <to-view-id>/cadastraUsuario.jsp</to-view-id>
+    </navigation-case>
+</navigation-rule>
+<navigation-rule>
     <from-view-id>/cadastraUsuario.jsp</from-view-id>
     <navigation-case>
         <from-outcome>sucesso</from-outcome>
@@ -76,6 +91,11 @@
 <managed-bean>
     <managed-bean-name>tipo</managed-bean-name>
     <managed-bean-class>beans.TipoEntradaSaida</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+    <managed-bean-name>pessoa</managed-bean-name>
+    <managed-bean-class>beans.Pessoa</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
 </managed-bean>
 </faces-config>

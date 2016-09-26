@@ -9,6 +9,7 @@ import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -18,6 +19,8 @@ import javax.persistence.Table;
 @Table(name = "usuario")
 public class UsuarioBean implements Serializable
 {
+
+    
     @Id
     @Column(name = "login")
     private String login;
@@ -166,4 +169,8 @@ public class UsuarioBean implements Serializable
     public void setCategoriaCollection(Collection<CategoriaBean> categoriaCollection) {
         this.categoriaCollection = categoriaCollection;
     }
+
+    public UsuarioBean() {
+    }
+
 }

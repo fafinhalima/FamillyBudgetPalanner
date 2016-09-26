@@ -10,5 +10,8 @@
     <mapping class="beans.UsuarioBean"/>
     <mapping class="beans.CategoriaBean"/>
     <mapping class="beans.TipoEntradaSaida"/>
+    <mapping class="beans.Pessoa"/>
+    <mapping class="beans.LancamentoSaida"/>
+    <mapping class="beans.LacamentoEntrada"/>
   </session-factory>
 </hibernate-configuration>

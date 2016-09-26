@@ -5,7 +5,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import dao.interfaces.CategoriaDAO;
-import dao.interfaces.CategoriaDAO;
 
 /**
  * Esta classe possibilita a manipulação dos dados de categorias

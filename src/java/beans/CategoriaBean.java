@@ -56,16 +56,16 @@ public class CategoriaBean implements Serializable
      * @param usuario
     * @return true se inserir ocorrer com sucesso e false caso contrário
     */
-    public String onInsert(UsuarioBean usuario)
+    public String onInsert(UsuarioBean usuario, TipoEntradaSaida tipo)
     {
       CategoriaDAO categoria;
       try
       {
-          if(usuario== null)
+          if(usuario== null || tipo == null)
               return "falha";
               
         this.setLoginUsuario(usuario);
-          
+        this.setTipoEntradaSaida(tipo);
         categoria = MySQLOrcamentoDAOFactory.getCategoriaDAO();
         if(categoria.insere(this)){
           return "sucesso";
@@ -166,6 +166,9 @@ public class CategoriaBean implements Serializable
          System.err.println("Erro: " + ex.getMessage());
        }
        return null;  
+    }
+
+    public CategoriaBean() {
     }
 }
 
