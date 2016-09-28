@@ -15,7 +15,7 @@
         <title>Cadastro</title>
     </head>
     <body>
-         <jsp:include page="cabecalho_n_menu.jsp" />
+         <jsp:include page="cabecalho.jsp" />
                 <!-- === INCIA CONTEUDO === -->
            
             <div id="content">
@@ -27,7 +27,7 @@
                         <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
                             <h:form styleClass="signup-page">
                                 <div class="signup-header">
-                                    <h2>Cadastre uma nova pessoa</h2>
+                                    <h2>Cadastre uma nova pessoa/empresa</h2>
                                     <p><a href="lacamento.jsp">Click aqui</a> para lançamento de entrada.</p>
                                 </div>
                                 <label>Nome</label>
@@ -46,12 +46,12 @@
                                   
                                 <div class="row">
                                     <div class="col-lg-4 text-right">
-                                        <h:commandButton styleClass="btn btn-primary pull-right"  action="#{pessoa.onInsert(usuario)}" value="Nova Categoria"   />                                      
+                                        <h:commandButton styleClass="btn btn-primary pull-right"  action="#{pessoa.onInsert(usuario)}" value="Nova Pessoa/Empresa"   />                                      
                                     </div>
                                 </div>
                             </h:form>
                         </div>
-                        <!-- Fim Categoria Box -->
+                        <!-- Fim  Box -->
                         </div>
                     </div>
                 </div>

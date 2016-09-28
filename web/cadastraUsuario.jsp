@@ -23,12 +23,12 @@
                     <div class="container">
                         <div class="row margin-vert-30">
                            
-                            <!-- Categoria Box -->
+                            <!-- Box -->
                         <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
                             <h:form styleClass="signup-page">
                                 <div class="signup-header">
-                                    <h2>Cadastre uma nova categoria</h2>
-                                    <p><a href="lacamento.jsp">Click aqui</a> para lançamento de entrada.</p>
+                                    <h2>Registre-se</h2>
+                                    <p><a href="index.jsp">Click Aqui</a> para voltar</p>
                                 </div>
                                 <label>Descrição</label>
                                 <h:inputText title="categoria" styleClass="form-control margin-bottom-20" value="#{usuario.login}" required="true" requiredMessage="Digite a descrição"/>
@@ -45,13 +45,13 @@
                                 </div>
                             </h:form>
                         </div>
-                        <!-- Fim Categoria Box -->
+                        <!-- Fim  Box -->
                         </div>
                     </div>
                 </div>
             </div>
             <!-- === FIM CONTEUDO === -->
-        <jsp:include page="rodape.jsp" />
+        <jsp:include page="rodape_login.jsp" />
     </body>
 </html>
 </f:view>

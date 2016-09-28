@@ -30,6 +30,8 @@ public class UsuarioBean implements Serializable
     private String email;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "loginUsuario")
     private Collection<CategoriaBean> categoriaCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "loginUsuario")
+    private Collection<Pessoa> pessoaCollection;
 
     /**
      * Usado para tratar o login do usuário
@@ -112,7 +114,29 @@ public class UsuarioBean implements Serializable
        }
        return null;
     }
-
+/**
+     * Esta função retorna um DataModel contendo a lista de pessoas
+     * @return model A lista de categorias do usuário
+     */
+    public DataModel getPessoas()
+    {
+       UsuarioDAO usuario;
+       try
+       {
+         usuario = MySQLOrcamentoDAOFactory.getUsuarioDAO();
+         UsuarioBean u = usuario.buscarUsuario(this);
+         if(u != null)
+         {
+           DataModel model = new ListDataModel(new ArrayList(u.getPessoaCollection()));
+           return model;
+         }
+       }
+       catch(Exception ex)
+       {
+         System.err.println("Erro: " + ex.getMessage());
+       }
+       return null;
+    }
     /**
      * @return the login
      */
@@ -168,6 +192,19 @@ public class UsuarioBean implements Serializable
      */
     public void setCategoriaCollection(Collection<CategoriaBean> categoriaCollection) {
         this.categoriaCollection = categoriaCollection;
+    }
+     /**
+     * @return the pessoaCollection
+     */
+    public Collection<Pessoa> getPessoaCollection() {
+        return pessoaCollection;
+    }
+
+    /**
+     * @param pessoaCollection the pessoaCollection to set
+     */
+    public void setPessoaCollection(Collection<Pessoa> pessoaCollection) {
+        this.pessoaCollection = pessoaCollection;
     }
 
     public UsuarioBean() {

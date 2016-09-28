@@ -9,7 +9,7 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-            <title>Categorias do Usuario</title>
+            <title>Lista de Pessoa/Empresas</title>
         </head>
         <body>
             <h:form>
@@ -20,30 +20,36 @@
                 <div class="container background-white">
                     <div class="container">
                         <div class="row margin-vert-30">
-                            <h:outputText value="Nenhuma categoria cadastrada..." rendered="#{usuario.categorias.rowCount==0}" /><br/>
+                            <h:outputText value="Nenhuma pessoa cadastrada..." rendered="#{usuario.pessoas.rowCount==0}" /><br/>
                             
-                            <h:dataTable styleClass="table" value="#{usuario.categorias}" var="item" border="1" cellpadding="2" cellspacing="0" rendered="#{usuario.categorias.rowCount>0}">
+                            <h:dataTable styleClass="table" value="#{usuario.pessoas}" var="item" border="1" cellpadding="2" cellspacing="0" rendered="#{usuario.categorias.rowCount>0}">
                                 <f:facet name="header">
-                                    <h:outputText value="Categorias" />
+                                    <h:outputText value="Pessoas/Empresas" />
                                 </f:facet>
+                                 <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="CPF" />
+                                    </f:facet>
+                                    <h:outputLabel value="#{item.cpf}" />
+                                </h:column>
                                 <h:column>
                                     <f:facet name="header">
-                                        <h:outputText value="descricao" />
+                                        <h:outputText value="Nome" />
                                     </f:facet>
-                                    <h:outputLabel value="#{item.descricao}" />
+                                    <h:outputLabel value="#{item.nome}" />
                                 </h:column>
 
-                                <h:column rendered="#{usuario.categorias.rowCount>0}">
+                                <h:column rendered="#{usuario.pessoas.rowCount>0}">
                                     <f:facet name="header">
-                                        <h:outputText value="Excluir Categoria" />
+                                        <h:outputText value="Excluir Pessoa" />
                                     </f:facet>
-                                    <h:commandLink action="#{categoria.onDelete}" onclick=" return confirm('Deseja excluir a categoria #{item.descricao} ?')" value="Excluir" rendered="#{usuario.categorias.rowCount>0}">
-                                       <f:setPropertyActionListener target="#{categoria}" value="#{item}" />
+                                    <h:commandLink action="#{pessoa.onDelete}" onclick=" return confirm('Deseja excluir a pessoa/empresa #{item.nome} ?')" value="Excluir" rendered="#{usuario.pessoas.rowCount>0}">
+                                       <f:setPropertyActionListener target="#{pessoa}" value="#{item}" />
                                     </h:commandLink>
                                 </h:column>
                             </h:dataTable> <br /> <br/>
-                            <h:commandLink action="#{categoria.onGerenciaCategoria()}" styleClass="btn btn-primary"  >
-                                 Nova categoria
+                            <h:commandLink action="#{pessoa.onGerenciaPessoa()}" styleClass="btn btn-primary"  >
+                                 Nova Pessoa/Empresa
                             </h:commandLink><br/><br/>
                             <h:commandLink  action="#{usuario.onLogoff}" value = "Fazer logoff" />
                         </div>
@@ -56,3 +62,4 @@
         </body>
     </html>
 </f:view>
+

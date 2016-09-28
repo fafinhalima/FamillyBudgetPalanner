@@ -7,8 +7,11 @@ package beans;
 
 import dao.MySQLOrcamentoDAOFactory;
 import dao.interfaces.PessoaDAO;
+import dao.interfaces.TipoDAO;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import javax.faces.model.SelectItem;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -203,7 +206,10 @@ public class Pessoa implements Serializable {
     public void setLacamentoEntradaCollection(Collection<LacamentoEntrada> lacamentoEntradaCollection) {
         this.lacamentoEntradaCollection = lacamentoEntradaCollection;
     }
-    
+    public String onGerenciaPessoa()
+    {
+        return "cadastraPessoa";
+    }
     public String onInsert(UsuarioBean usuario)
     {
         
@@ -225,6 +231,46 @@ public class Pessoa implements Serializable {
        }
        return "falha";
     }
-
+    
+     public ArrayList<SelectItem> busca(UsuarioBean usuario)
+    {
+        PessoaDAO pessoa = null;
+              
+       try
+       {
+         pessoa =  MySQLOrcamentoDAOFactory.getPessoaDAO();
+         ArrayList u = new ArrayList();
+         u.add(new SelectItem(null,"Selecione uma Pessoa"));
+         for(Pessoa item: pessoa.buscarLista(usuario))
+         {
+            u.add(new SelectItem(item.getCodigoPessoa(),item.getNome()));
+         }
+         if(u.size()>1)
+         {
+         
+           return u;
+         }
+       }
+       catch(Exception ex)
+       {
+         System.err.println("Erro: " + ex.getMessage());
+       }
+       return null;  
+    }
+    public String onDelete()
+    {
+      PessoaDAO pessoa;
+      try
+      {
+        pessoa = MySQLOrcamentoDAOFactory.getPessoaDAO();
+        if(pessoa.delete(this))
+          return "sucesso";
+      }
+      catch (Exception ex)
+      {
+        System.err.println("Erro: " + ex.getMessage());
+      }
+      return "falha";
+    }
     
 }

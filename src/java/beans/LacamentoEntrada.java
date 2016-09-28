@@ -5,6 +5,8 @@
  */
 package beans;
 
+import dao.MySQLOrcamentoDAOFactory;
+import dao.interfaces.LancamentoEntradaDAO;
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -163,6 +165,29 @@ public class LacamentoEntrada implements Serializable {
     @Override
     public String toString() {
         return "beans.LacamentoEntrada[ codLancamentoEntrada=" + codLancamentoEntrada + " ]";
+    }
+    
+    public String onInsert(UsuarioBean usuario, Pessoa pessoa, CategoriaBean categoria)
+    {
+        LancamentoEntradaDAO lancamento;
+        
+       try
+       {
+           if (usuario == null || pessoa==null || categoria == null)
+               return "falha";
+           this.setLoginUsuario(usuario);
+           this.setCategoriaLacamentoEntrada(categoria);
+           this.setRecebidoPessoal(pessoa);
+            lancamento = MySQLOrcamentoDAOFactory.getLancamentoEntradaDAO();
+        
+         if(lancamento.insere(this))
+           return "sucesso";
+       } 
+       catch (Exception ex)
+       {
+         System.err.println("Erro: " + ex.getMessage());
+       }
+       return "falha";
     }
     
 }

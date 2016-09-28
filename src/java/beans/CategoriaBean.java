@@ -54,6 +54,7 @@ public class CategoriaBean implements Serializable
     /**
     * Este método faz a remoção de uma Cateogoria
      * @param usuario
+     * @param tipo
     * @return true se inserir ocorrer com sucesso e false caso contrário
     */
     public String onInsert(UsuarioBean usuario, TipoEntradaSaida tipo)
@@ -167,6 +168,33 @@ public class CategoriaBean implements Serializable
        }
        return null;  
     }
+    
+     public ArrayList<SelectItem> buscaCategoria(UsuarioBean usuario)
+    {
+        CategoriaDAO categoria = null;
+              
+       try
+       {
+         categoria =  MySQLOrcamentoDAOFactory.getCategoriaDAO();
+         ArrayList u = new ArrayList();
+         u.add(new SelectItem(null,"Selecione um Tipo"));
+         for(CategoriaBean item: categoria.buscarLista(usuario))
+         {
+            u.add(new SelectItem(item.getCodigo(),item.getDescricao()));
+         }
+         if(u.size()>1)
+         {
+         
+           return u;
+         }
+       }
+       catch(Exception ex)
+       {
+         System.err.println("Erro: " + ex.getMessage());
+       }
+       return null;  
+    }
+
 
     public CategoriaBean() {
     }

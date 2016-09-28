@@ -17,7 +17,7 @@
     </head>
     <body>
         
-            <jsp:include page="cabecalho_n_menu.jsp" />
+            <jsp:include page="cabecalho.jsp" />
              <!-- === INCIA CONTEUDO === -->
            
             <div id="content">

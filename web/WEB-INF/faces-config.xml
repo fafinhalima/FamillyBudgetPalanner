@@ -7,7 +7,7 @@
     <from-view-id>/index.jsp</from-view-id>
     <navigation-case>
         <from-outcome>sucesso</from-outcome>
-        <to-view-id>/categoria.jsp</to-view-id>
+        <to-view-id>/pessoa.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>falha</from-outcome>
@@ -22,7 +22,41 @@
     <from-view-id>/cadastraPessoa.jsp</from-view-id>
     <navigation-case>
         <from-outcome>sucesso</from-outcome>
+        <to-view-id>/gerenciaLancamentoEntrada.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>falha</from-outcome>
+        <to-view-id>/falhaLogin.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>cadastro</from-outcome>
+        <to-view-id>/cadastraUsuario.jsp</to-view-id>
+    </navigation-case>
+</navigation-rule>
+<navigation-rule>
+    <from-view-id>/gerenciaLancamentoEntrada.jsp</from-view-id>
+    <navigation-case>
+        <from-outcome>sucesso</from-outcome>
         <to-view-id>/categoria.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>falha</from-outcome>
+        <to-view-id>/falhaLogin.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>cadastro</from-outcome>
+        <to-view-id>/cadastraUsuario.jsp</to-view-id>
+    </navigation-case>
+</navigation-rule>
+<navigation-rule>
+    <from-view-id>/pessoa.jsp</from-view-id>
+    <navigation-case>
+        <from-outcome>sucesso</from-outcome>
+        <to-view-id>/pessoa.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>cadastraPessoa</from-outcome>
+        <to-view-id>/cadastraPessoa.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>falha</from-outcome>
@@ -96,6 +130,16 @@
 <managed-bean>
     <managed-bean-name>pessoa</managed-bean-name>
     <managed-bean-class>beans.Pessoa</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+    <managed-bean-name>lEntrada</managed-bean-name>
+    <managed-bean-class>beans.LacamentoEntrada</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+</managed-bean>
+<managed-bean>
+    <managed-bean-name>lSaida</managed-bean-name>
+    <managed-bean-class>beans.LancamentoSaida</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
 </managed-bean>
 </faces-config>

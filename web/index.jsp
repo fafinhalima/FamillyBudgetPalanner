@@ -62,7 +62,7 @@
             </div>
             <!-- === FIM CONTEUDO === -->
            
-          <jsp:include page="rodape.jsp" />
+          <jsp:include page="rodape_login.jsp" />
             </h:form>
         </body>
     </html>

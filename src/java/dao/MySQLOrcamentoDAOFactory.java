@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
 import dao.interfaces.CategoriaDAO;
+import dao.interfaces.LancamentoEntradaDAO;
 import dao.interfaces.PessoaDAO;
 import dao.interfaces.TipoDAO;
 
@@ -80,5 +81,16 @@ public class MySQLOrcamentoDAOFactory
     public static PessoaDAO getPessoaDAO() throws Exception
     {
        return new MySQLPessoaDAO();
+    }
+    
+    /**
+     * Esta função retorna uma instância de um objeto da classe
+     * MySQLLancamentoEntradaDAO, que implementa a interface LancamentoDAO.
+     * @return um objeto da classe MySQLLancamentoEntradaDAO, que implementa a interface LancamentoEntradaDAO.
+     * @throws java.lang.Exception
+     */
+    public static LancamentoEntradaDAO getLancamentoEntradaDAO() throws Exception
+    {
+       return new MySQLLancamentoEntradaDAO();
     }
 }
