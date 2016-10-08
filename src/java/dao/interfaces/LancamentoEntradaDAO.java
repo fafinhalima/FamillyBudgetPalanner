@@ -19,4 +19,12 @@ public interface LancamentoEntradaDAO {
      * @throws java.lang.Exception
     */
     public boolean insere(LacamentoEntrada lancamento) throws Exception;
+    
+     /**
+    * Este método faz a remoção de um lançamento de entrada
+    * @param lancamento O JavaBean contendo os dados do lancamento a ser removido
+    * @return true se a remoção ocorrer com sucesso e false caso contrário
+     * @throws java.lang.Exception
+    */
+    public boolean delete(LacamentoEntrada lancamento) throws Exception;
 }

@@ -32,6 +32,8 @@ public class UsuarioBean implements Serializable
     private Collection<CategoriaBean> categoriaCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "loginUsuario")
     private Collection<Pessoa> pessoaCollection;
+     @OneToMany(cascade = CascadeType.ALL, mappedBy = "loginUsuario")
+    private Collection<LacamentoEntrada> LancamentoEntradaCollection;
 
     /**
      * Usado para tratar o login do usuário
@@ -114,9 +116,9 @@ public class UsuarioBean implements Serializable
        }
        return null;
     }
-/**
+    /**
      * Esta função retorna um DataModel contendo a lista de pessoas
-     * @return model A lista de categorias do usuário
+     * @return model A lista de pessoas
      */
     public DataModel getPessoas()
     {
@@ -137,6 +139,31 @@ public class UsuarioBean implements Serializable
        }
        return null;
     }
+    
+    /**
+     * Esta função retorna um DataModel contendo a lista de lancamentos entrada
+     * @return model A lista de lançamentos
+     */
+    public DataModel getLancamentosEntrada()
+    {
+       UsuarioDAO usuario;
+       try
+       {
+         usuario = MySQLOrcamentoDAOFactory.getUsuarioDAO();
+         UsuarioBean u = usuario.buscarUsuario(this);
+         if(u != null)
+         {
+           DataModel model = new ListDataModel(new ArrayList(u.getLancamentoEntradaCollection()));
+           return model;
+         }
+       }
+       catch(Exception ex)
+       {
+         System.err.println("Erro: " + ex.getMessage());
+       }
+       return null;
+    }
+    
     /**
      * @return the login
      */
@@ -199,13 +226,26 @@ public class UsuarioBean implements Serializable
     public Collection<Pessoa> getPessoaCollection() {
         return pessoaCollection;
     }
-
     /**
      * @param pessoaCollection the pessoaCollection to set
      */
     public void setPessoaCollection(Collection<Pessoa> pessoaCollection) {
         this.pessoaCollection = pessoaCollection;
     }
+    /**
+     * @param LancamentoEntradaCollection
+     */
+    public void setLancamentoEntradaCollection(Collection<LacamentoEntrada> LancamentoEntradaCollection) {
+        this.LancamentoEntradaCollection = LancamentoEntradaCollection;
+    }
+    /**
+     * @return the lancamentoEntradaCollection
+     */
+    public Collection<LacamentoEntrada> getLancamentoEntradaCollection() {
+        return LancamentoEntradaCollection;
+    }
+
+    
 
     public UsuarioBean() {
     }

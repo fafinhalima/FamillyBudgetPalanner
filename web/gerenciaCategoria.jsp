@@ -30,10 +30,9 @@
                             <h:form styleClass="signup-page">
                                 <div class="signup-header">
                                     <h2>Cadastre uma nova categoria</h2>
-                                    <p><a href="lacamento.jsp">Click aqui</a> para lançamento de entrada.</p>
+                                    <p><a href="categoria.jsp">Click aqui</a> para voltar.</p>
                                 </div>
-                                <label>Usuario</label>
-                                <h:inputText title="usuario"  styleClass="form-control margin-bottom-20" label="#{usuario.login}" value="#{usuario.login}" required="true" requiredMessage="Digite a descrição"/>
+                                
                                 <label>Descrição</label>
                                 <h:inputText title="categoria"  styleClass="form-control margin-bottom-20" value="#{categoria.descricao}" required="true" requiredMessage="Digite a descrição"/>
                                 <label>Tipo de entrada e saida</label>

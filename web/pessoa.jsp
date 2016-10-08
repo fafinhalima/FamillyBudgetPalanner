@@ -22,7 +22,7 @@
                         <div class="row margin-vert-30">
                             <h:outputText value="Nenhuma pessoa cadastrada..." rendered="#{usuario.pessoas.rowCount==0}" /><br/>
                             
-                            <h:dataTable styleClass="table" value="#{usuario.pessoas}" var="item" border="1" cellpadding="2" cellspacing="0" rendered="#{usuario.categorias.rowCount>0}">
+                            <h:dataTable styleClass="table" value="#{usuario.pessoas}" var="item" border="1" cellpadding="2" cellspacing="0" rendered="#{usuario.pessoas.rowCount>0}">
                                 <f:facet name="header">
                                     <h:outputText value="Pessoas/Empresas" />
                                 </f:facet>

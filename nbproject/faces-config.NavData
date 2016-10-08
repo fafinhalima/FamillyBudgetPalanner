@@ -3,8 +3,19 @@
     <Scope Scope="Faces Configuration Only"/>
     <Scope Scope="Project">
         <Node id="falhaLogin.jsp" x="150" y="300" zoom="true"/>
-        <Node id="falhaRemocao.jsp" x="400" y="150" zoom="true"/>
         <Node id="index.jsp" x="650" y="150" zoom="true"/>
+        <Node id="gerenciaLancamentoEntrada.jsp" x="900" y="300" zoom="true"/>
+        <Node id="pessoa.jsp" x="650" y="300" zoom="true"/>
+        <Node id="cadastraPessoa.jsp" x="150" y="150" zoom="true"/>
+        <Node id="categoria.jsp" x="1150" y="150" zoom="true"/>
+        <Node id="gerenciaCategoria.jsp" x="100" y="450" zoom="true"/>
+        <Node id="lancamento.jsp" x="649" y="460" zoom="true"/>
+        <Node id="cabecalho_n_menu.jsp" x="390" y="446" zoom="true"/>
+        <Node id="cadastraUsuario.jsp" x="900" y="150" zoom="true"/>
+        <Node id="falhaRemocao.jsp" x="400" y="150" zoom="true"/>
+        <Node id="cabecalho.jsp" x="150" y="600" zoom="true"/>
+        <Node id="rodape_login.jsp" x="400" y="300" zoom="true"/>
+        <Node id="rodape.jsp" x="400" y="600" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

@@ -7,7 +7,7 @@
     <from-view-id>/index.jsp</from-view-id>
     <navigation-case>
         <from-outcome>sucesso</from-outcome>
-        <to-view-id>/pessoa.jsp</to-view-id>
+        <to-view-id>/lancamento.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>falha</from-outcome>
@@ -22,11 +22,11 @@
     <from-view-id>/cadastraPessoa.jsp</from-view-id>
     <navigation-case>
         <from-outcome>sucesso</from-outcome>
-        <to-view-id>/gerenciaLancamentoEntrada.jsp</to-view-id>
+        <to-view-id>/pessoa.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>falha</from-outcome>
-        <to-view-id>/falhaLogin.jsp</to-view-id>
+        <to-view-id>/falhaRemocao.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>cadastro</from-outcome>
@@ -37,11 +37,11 @@
     <from-view-id>/gerenciaLancamentoEntrada.jsp</from-view-id>
     <navigation-case>
         <from-outcome>sucesso</from-outcome>
-        <to-view-id>/categoria.jsp</to-view-id>
+        <to-view-id>/lancamento.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>falha</from-outcome>
-        <to-view-id>/falhaLogin.jsp</to-view-id>
+        <to-view-id>/falhaRemocao.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>cadastro</from-outcome>
@@ -60,7 +60,7 @@
     </navigation-case>
     <navigation-case>
         <from-outcome>falha</from-outcome>
-        <to-view-id>/falhaLogin.jsp</to-view-id>
+        <to-view-id>/falhaRemocao.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>cadastro</from-outcome>
@@ -71,11 +71,11 @@
     <from-view-id>/cadastraUsuario.jsp</from-view-id>
     <navigation-case>
         <from-outcome>sucesso</from-outcome>
-        <to-view-id>/categoria.jsp</to-view-id>
+        <to-view-id>/index.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>falha</from-outcome>
-        <to-view-id>/falhaLogin.jsp</to-view-id>
+        <to-view-id>/falhaRemocao.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>cadastro</from-outcome>
@@ -102,6 +102,25 @@
     <navigation-case>
         <from-outcome>sucesso</from-outcome>
         <to-view-id>/categoria.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>falha</from-outcome>
+        <to-view-id>/falhaRemocao.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>logoff</from-outcome>
+        <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+</navigation-rule>
+<navigation-rule>
+    <from-view-id>/lancamento.jsp</from-view-id>
+    <navigation-case>
+        <from-outcome>gerenciaLancamentoEntrada</from-outcome>
+        <to-view-id>/gerenciaLancamentoEntrada.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+        <from-outcome>sucesso</from-outcome>
+        <to-view-id>/lancamento.jsp</to-view-id>
     </navigation-case>
     <navigation-case>
         <from-outcome>falha</from-outcome>

@@ -28,13 +28,13 @@
                             <h:form styleClass="signup-page">
                                 <div class="signup-header">
                                     <h2>Lançamento de Entrada</h2>
-                                    <p><a href="lacamento.jsp">Click aqui</a> para lançamento de entrada.</p>
+                                    <p><a href="lancamento.jsp">Click aqui</a> para lançamento de entrada.</p>
                                 </div>
                                 <label>Descrição: </label>
                                 <h:inputText title="lancamento" styleClass="form-control margin-bottom-20" value="#{lEntrada.descricaoLacamentoEntrada}" required="true" requiredMessage="Digite a descrição"/>
                                 <label>Data de lançamento: </label>
                                 <h:inputText title="data" styleClass="form-control margin-bottom-20" value="#{lEntrada.dataLancamentoEntrada}" required="true" requiredMessage="Digite uma data de lançamento">
-                                    <f:convertDateTime type="date" pattern="dd/mm/yyyy" />
+                                    <f:convertDateTime type="date" pattern="dd/MM/yyyy" />
                                 </h:inputText>
                                 <label>Recebido de: </label>
                                 <div class="row">

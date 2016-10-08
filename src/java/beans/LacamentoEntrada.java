@@ -86,6 +86,15 @@ public class LacamentoEntrada implements Serializable {
         this.valorLancamentoEntrada = valorLancamentoEntrada;
     }
 
+    /**
+     * Usado para tratar a atualização do lançamento de entradas
+     * @return sucesso Indica que a tela gerencia foi solicitada
+     */
+    public String onGerenciaLancamentoEntrada()
+    {
+      return "gerenciaLancamentoEntrada";
+    }
+    
     public Integer getCodLancamentoEntrada() {
         return codLancamentoEntrada;
     }
@@ -188,6 +197,22 @@ public class LacamentoEntrada implements Serializable {
          System.err.println("Erro: " + ex.getMessage());
        }
        return "falha";
+    }
+    
+    public String onDelete()
+    {
+      LancamentoEntradaDAO lancamento;
+      try
+      {
+        lancamento = MySQLOrcamentoDAOFactory.getLancamentoEntradaDAO();
+        if(lancamento.delete(this))
+          return "sucesso";
+      }
+      catch (Exception ex)
+      {
+        System.err.println("Erro: " + ex.getMessage());
+      }
+      return "falha";
     }
     
 }

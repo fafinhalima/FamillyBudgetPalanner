@@ -6,7 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML >
-<html >
+<html lang="en">
     <!--<![endif]-->
     <head>
         <!-- Title -->
@@ -19,15 +19,20 @@
         <!-- Favicon -->
         <link href="favicon.ico" rel="shortcut icon">
         <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap.css" >
+        <link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
         <!-- Template CSS -->
-        <link rel="stylesheet" href="assets/css/animate.css" >
-        <link rel="stylesheet" href="assets/css/font-awesome.css" >
-        <link rel="stylesheet" href="assets/css/estilos.css" >
-        <link rel="stylesheet" href="assets/css/responsive.css" >
-        <link rel="stylesheet" href="assets/css/custom.css" >
-         <!-- Morris Charts CSS -->
-        <link href="css/plugins/morris.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+         <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="assets/css/plugins/morris.css" rel="stylesheet">
         <!-- Google Fonts-->
         <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
     </head>
@@ -94,7 +99,7 @@
                                         </ul>
                                     </li>
                                      <li>
-                                        <a href="relatorio.jsp" class="fa-bar-chart-o">relatório</a>
+                                        <a href="relatorio.jsp" class="fa-angellist">relatório</a>
                                     </li>
                                     <li>
                                         <a href="contact.html" class="fa-comment ">Contato</a>
@@ -124,7 +129,7 @@
             </div>
             <!-- End Top Menu -->
             <!-- === END HEADER === -->
-        </div>
+           
             
     </body>
 </html>

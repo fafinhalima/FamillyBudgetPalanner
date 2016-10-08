@@ -1,14 +1,11 @@
-<%-- 
-    Document   : cabecalho
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     
-    Author     : Rafael
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML >
-<html >
-    <!--<![endif]-->
-    <head>
+    <h:head>
         <!-- Title -->
         <title>FamillyBudgetPlanner - Orçamento Familiar</title>
         <!-- Meta -->
@@ -30,9 +27,9 @@
         <link href="css/plugins/morris.css" rel="stylesheet">
         <!-- Google Fonts-->
         <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div id="body-bg">
+    </h:head>
+    <h:body>
+         <div id="body-bg">
             <!-- Phone/Email -->
             <div id="pre-header" class="background-gray-lighter">
                 <div class="container no-padding">
@@ -94,7 +91,10 @@
                                         </ul>
                                     </li>
                                      <li>
-                                        <a href="relatorio.jsp" class="fa-bar-chart-o">relatório</a>
+                                         <h:outputLink value="relatorio.jsp" styleClass="fa-bar-chart-o">
+                                                <h:outputText value="relatorio" />
+                                                <f:param name="login" value="#{usuario.login}" />
+                                        </h:outputLink>
                                     </li>
                                     <li>
                                         <a href="contact.html" class="fa-comment ">Contato</a>
@@ -125,7 +125,7 @@
             <!-- End Top Menu -->
             <!-- === END HEADER === -->
         </div>
-            
-    </body>
+    </h:body>
+    
 </html>
-<!-- === END FOOTER === -->
+</f:view>

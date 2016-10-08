@@ -40,7 +40,7 @@
                                   
                                 <div class="row">
                                     <div class="col-lg-4 text-right">
-                                        <h:commandButton styleClass="btn btn-primary pull-right"  action="#{usuario.onInsert()}" value="Nova Categoria"   />                                      
+                                        <h:commandButton styleClass="btn btn-primary pull-right"  action="#{usuario.onInsert()}" value="Novo Usuário"   />                                      
                                     </div>
                                 </div>
                             </h:form>
