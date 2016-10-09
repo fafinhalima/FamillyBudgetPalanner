@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE HTML >
 <html >
     <!--<![endif]-->
@@ -94,7 +95,29 @@
                                         </ul>
                                     </li>
                                      <li>
-                                        <a href="relatorio.jsp" class="fa-bar-chart-o">relatório</a>
+                                         <span class="fa-bar-chart-o">relatório</span>
+                                          <ul>
+                                            <li>
+                                                <a href="relatorio.jsp " target="_blank">relatório trimestral de despesa</a>
+                   
+                                            </li>
+                                            <li>
+                                                <a href="relatorioMensal.jsp " target="_blank">relatório mensal de despesa</a>
+                   
+                                            </li>
+                                            <li>
+                                                <a href="relatorioTrimestralEntrada.jsp " target="_blank" >relatório trimestral de entrada</a>
+                   
+                                            </li>
+                                            <li>
+                                                <a href="relatorioMensalEntrada.jsp " target="_blank">relatório mensal de entrada</a>
+                   
+                                            </li>
+                                            <li>
+                                                <a href="relatorioMensalEntradaSaida.jsp " target="_blank" >relatório mensal de entrada vrs saida</a>
+                   
+                                            </li>
+                                          </ul>
                                     </li>
                                     <li>
                                         <a href="contact.html" class="fa-comment ">Contato</a>

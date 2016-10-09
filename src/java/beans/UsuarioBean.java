@@ -34,7 +34,8 @@ public class UsuarioBean implements Serializable
     private Collection<Pessoa> pessoaCollection;
      @OneToMany(cascade = CascadeType.ALL, mappedBy = "loginUsuario")
     private Collection<LacamentoEntrada> LancamentoEntradaCollection;
-
+    
+    public static String loginUsuario;
     /**
      * Usado para tratar o login do usuário
      * @return sucesso se o login for bem sucedido e falha caso contrário
@@ -175,6 +176,7 @@ public class UsuarioBean implements Serializable
      * @param login the login to set
      */
     public void setLogin(String login) {
+        loginUsuario = login;
         this.login = login;
     }
 

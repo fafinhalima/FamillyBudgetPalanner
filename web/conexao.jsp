@@ -31,7 +31,7 @@
             Statement cmd = cn.createStatement();
             String sql = "select sum(valorLancamentoEntrada) as valor,descricao from categoria inner join lacamento_entrada on"+ 
                         " categoria.codigo= lacamento_entrada.categoriaLacamentoEntrada"+
-                        " where categoria.loginUsuario = 'admin' and dataLancamentoEntrada >= date_add(now(), interval -3 month)"+
+                        " where categoria.loginUsuario = '"+UsuarioBean.loginUsuario+"' and dataLancamentoEntrada >= date_add(now(), interval -3 month) and tipo_entrada_saida = 1"+
                         " group by descricao";
             
             

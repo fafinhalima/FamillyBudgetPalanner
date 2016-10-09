@@ -1,7 +1,9 @@
 <%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 
 <%@include file="conexao.jsp" %>
+
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,7 +20,7 @@
                        try{
                             DefaultPieDataset data= new DefaultPieDataset();
                             
-                           while(rs.next())
+                           while( rs.next())
                            {
                                data.setValue(rs.getString("descricao"),rs.getDouble(1));
                            }
